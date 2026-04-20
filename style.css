@@ -1,3 +1,5 @@
+/* ISSUE 1 */
+
 /* 3rd party font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
@@ -62,4 +64,50 @@ footer {
   font-size: 0.9rem;
   text-align: center;
   padding-top: 1rem;
+}
+
+
+/* ISSUE 2 */
+
+.main-container {
+  max-width: 800px;
+  
+  /* margin: <top> <right> <bottom> <left> */
+  margin: 20px auto; 
+  
+  /* border: width style color */
+  border: var(--border-thickness) solid var(--primary-color);
+  border-radius: 12px; /* Required: border-radius */
+  
+  /* padding: <top> <right> <bottom> <left> */
+  padding: 20px 40px 20px 40px; 
+  
+  background-color: white;
+}
+
+/* longhand syntax */
+section {
+  /* margin longhand */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 0;
+  margin-right: 0;
+
+  /* padding longhand */
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  /* border longhand */
+  border-style: dashed;
+  border-width: 1px;
+  border-color: var(--secondary-color);
+  
+  background: #f9f9f9;
+}
+
+/* list items for meeting minutes */
+ul li {
+  margin-bottom: 8px;
+  padding-left: 15px;
+  border-left: 4px solid var(--accent-color);
 }
