@@ -111,3 +111,84 @@ ul li {
   padding-left: 15px;
   border-left: 4px solid var(--accent-color);
 }
+
+/* ISSUE 3  */
+
+/* centering */
+section h2, 
+section h3, 
+section h4 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* flexbox */
+nav {
+  display: flex;
+  justify-content: center; 
+  gap: 2.5rem;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* grid */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 30px;
+  align-items: start;
+  padding: 20px;
+}
+
+.grid-item {
+  text-align: center; 
+  width: 100%;
+}
+
+.audio-item {
+  grid-column: 1 / span 2; 
+  margin-top: 10px;
+}
+
+/* feedback form */
+form {
+  max-width: 550px;   
+  margin: 0 auto;       
+  text-align: left;      
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* positioning */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--main-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-container {
+  position: relative;
+}
+
+/* display */
+.hidden-note {
+  display: none;      
+}
+
+.inline-block-btn {
+  display: inline-block;
+  margin: 20px auto 0 auto; 
+  padding: 10px 20px;
+}

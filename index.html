@@ -9,118 +9,103 @@
 
   <body>
 
-    <header>
+    <header class="sticky-header">
       <h1>Pomodoro Timer First Brainstorm</h1>
       <h2>Check-Ins</h2>
       <h3>Date: April 13th, 2026</h3>
     </header>
 
     <nav>
-      <a href="#attendance">Attendance</a><br>
-      <a href="#agenda">Agenda</a>
+      <a href="#attendance">Attendance</a>
+      <a href="#recordings">Media</a>
+      <a href="#feedback">Feedback</a>
     </nav>
 
-    <main>
+    <div class="main-container">
+      <main>
 
-      <section id="attendance">
-        <h2>Attendance</h2>
-        <ul>
-          <li>Hemendra Ande</li>
-          <li>Dwight Schrute</li>
-          <li>Jim Halpert</li>
-          <li>Michael Scott</li>
-          <li>Pamela Beesly</li>
-          <li>Angela Martin</li>
-          <li>Phyllis Vance</li>
-          <li>Kelly Kapoor</li>
-        </ul>
-      </section>
+        <section id="attendance">
+          <h2>Attendance</h2>
+          <ul>
+            <li>Hemendra Ande</li>
+            <li>Dwight Schrute</li>
+            <li>Jim Halpert</li>
+            <li>Michael Scott</li>
+            <li>Pamela Beesly</li>
+            <li>Angela Martin</li>
+            <li>Phyllis Vance</li>
+            <li>Kelly Kapoor</li>
+          </ul>
+        </section>
 
-      <section id="agenda">
-        <h2>Agenda</h2>
-        <ol>
-          <li>Discuss project idea</li>
-          <li>Decide features</li>
-          <li>Assign roles</li>
-          <li>Set development timeline</li>
-          <li>Choose tools and technologies</li>
-          <li>Plan next meeting</li>
-        </ol>
-      </section>
+        <section id="recordings">
+          <h3>Meeting Media</h3>
+          <div class="media-grid"> 
+            
+            <div class="grid-item"> 
+              <h4>Diagram</h4>
+              <img src="diagram.jpg" alt="Whiteboard diagram" style="width:100%">
+            </div>
 
-      <section>
-        <h3>Unfinished Business</h3>
-        <p>Haven't mapped out the timeline yet. Next meeting to discuss.</p>
+            <div class="grid-item"> 
+              <h4>Video Recording</h4>
+              <video controls style="width:100%">
+                <source src="video.mp4" type="video/mp4">
+              </video>
+            </div>
 
-        <h3>New Business</h3>
-        <p>We decided to build a <strong>Pomodoro Timer</strong> web app.</p>
-        <p>Main features include <em>timer controls</em> and break reminders.</p>
-        <p>Pamela Beesly will lead the aesthetic design.</p>
-        <p>Jim Halpert will handle the backend development.</p>
-        <p>Michael Scott will manage the project timeline.</p>
-      </section>
+            <div class="grid-item audio-item"> <h4>Audio Recording</h4>
+              <audio controls>
+                <source src="audio.m4a" type="audio/mp4">
+              </audio>
+            </div>
 
-      <section>
-        <h3>Miscellaneous</h3>
-        <p>We discussed future plans and tools with HTML and JavaScript.</p>
-        <hr>
-      </section>
+          </div>
+        </section>
 
-      <section>
-        <h3>Diagram</h3>
-        <img src="diagram.jpg" alt="Whiteboard diagram" width="300">
-      </section>
+        <section id="feedback">
+          <h3>Feedback Form</h3>
+          <form>
+            <fieldset>
+              <legend>Meeting Feedback</legend>
 
-      <section>
-        <h3>Audio Recording</h3>
-        <audio controls>
-          <source src="audio.m4a" type="audio/mp4">
-        </audio>
+              <label for="name">Name:</label><br>
+              <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
 
-        <h3>Video Recording</h3>
-        <video controls width="300">
-          <source src="video.mp4" type="video/mp4">
-        </video>
-      </section>
+              <label for="date">Meeting Date:</label><br>
+              <input type="date" id="date" name="date"><br><br>
 
-      <section>
-        <h3>Feedback Form</h3>
-        <form>
-          <fieldset>
-            <legend>Meeting Feedback</legend>
+              <label>Was the meeting helpful?</label><br>
+              <input type="radio" name="helpful" id="yes" value="yes"> <label for="yes">Yes</label>
+              <input type="radio" name="helpful" id="no" value="no"> <label for="no">No</label><br><br>
 
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+              <label>Topics you found useful:</label><br>
+              <input type="checkbox" id="idea"> <label for="idea">Project Idea</label><br>
+              <input type="checkbox" id="features"> <label for="features">Features</label><br>
+              <input type="checkbox" id="roles"> <label for="roles">Role Assignment</label><br><br>
 
-            <label for="date">Meeting Date:</label><br>
-            <input type="date" id="date" name="date"><br><br>
+              <label for="role">Your role:</label><br>
+              <select id="role" name="role">
+                <option>Developer</option>
+                <option>Designer</option>
+                <option>Tester</option>
+                <option>Project Manager</option>
+              </select><br><br>
 
-            <label>Was the meeting helpful?</label><br>
-            <input type="radio" name="helpful" value="yes"> Yes
-            <input type="radio" name="helpful" value="no"> No<br><br>
+              <label for="comments">Additional Comments:</label><br>
+              <textarea id="comments" name="comments" rows="4" cols="30" placeholder="Write your thoughts..."></textarea><br><br>
 
-            <label>Topics you found useful:</label><br>
-            <input type="checkbox"> Project Idea<br>
-            <input type="checkbox"> Features<br>
-            <input type="checkbox"> Role Assignment<br><br>
+              <button type="submit" class="inline-block-btn">Submit Feedback</button>
+            </fieldset>
+          </form>
+        </section>
 
-            <label for="role">Your role:</label><br>
-            <select id="role" name="role">
-              <option>Developer</option>
-              <option>Designer</option>
-              <option>Tester</option>
-              <option>Project Manager</option>
-            </select><br><br>
+        <p class="hidden-note">This note is for TAs only and is hidden via CSS.</p>
 
-            <label for="comments">Additional Comments:</label><br>
-            <textarea id="comments" name="comments" rows="4" cols="30" placeholder="Write your thoughts..."></textarea><br><br>
-
-            <button type="submit">Submit Feedback</button>
-          </fieldset>
-        </form>
-      </section>
-
-    </main>
+      </main>
+    </div> <footer>
+      <p>&copy; 2026 Pomodoro Project Team</p>
+    </footer>
 
   </body>
 </html>
