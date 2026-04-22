@@ -1,194 +1,264 @@
-/* ISSUE 1 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* 3rd party font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-:root {
-  /* dark blue */
-  --primary-color: #182B49;              
-  /* gold */
-  --secondary-color: hsl(35, 100%, 50%);
-  /* green */
-  --accent-color: rgba(0, 106, 77, 0.8); 
-  --main-bg: #ffffff;
-  /* relative Unit 1: vh */
-  --header-height: 15vh;                   
-  /* absolute Unit 1: px */
-  --border-thickness: 2px;                
+/* universal selector */
+* {
+  box-sizing: border-box;
 }
 
-/* global reset & typography */
+:root {
+  --primary-color: #182B49; 
+  --secondary-color: #f3bc2b;
+  --accent-color: #006a4d;    
+  
+  --main-bg: color-mix(in srgb, #72a0c1, white 92%); 
+  
+  --page-shadow: var(--shadow-color, rgba(0, 0, 0, 0.05));
+
+  --header-height: 16vh;      
+  --border-radius: 8px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--main-bg, white);
+  background-color: var(--main-bg, #f0f4f8); 
   color: var(--primary-color);
   margin: 0;
   padding: 0;
+  transition: background-color 0.5s ease; 
 }
 
+/* top band */
 header {
-  /* relative unit 2: rem */
-  padding: 2rem; 
+  padding: 1.5rem;
   height: var(--header-height);
-  
-  /* apply color using color-mix() */
-  background-color: color-mix(in srgb, var(--primary-color), white 90%);
-  
-  /* absolute unit 2: pt */
-  border-bottom: 3pt solid var(--secondary-color); 
+  background: #ffffff;
+  border-bottom: 4px solid var(--secondary-color);
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* absolute unit 3: cm */
 h1 {
-  margin-bottom: 0.5cm; 
-  text-decoration: underline;
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: -1px;
 }
 
-/* relative unit 3: em */
-main {
-  margin: 2em; 
-}
-
-/* RGBA usage */
-.status-badge {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* HSL usage */
-footer {
-  color: hsl(0, 0%, 40%); 
-  font-size: 0.9rem;
-  text-align: center;
-  padding-top: 1rem;
-}
-
-
-/* ISSUE 2 */
-
-.main-container {
-  max-width: 800px;
-  min-width: 320px;
-  /* margin: <top> <right> <bottom> <left> */
-  margin: 20px auto; 
-  
-  /* border: width style color */
-  border: var(--border-thickness) solid var(--primary-color);
-  border-radius: 12px; /* Required: border-radius */
-  
-  /* padding: <top> <right> <bottom> <left> */
-  padding: 20px 40px 20px 40px; 
-  
-  background-color: white;
-}
-
-/* longhand syntax */
-section {
-  /* margin longhand */
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 0;
-  margin-right: 0;
-
-  /* padding longhand */
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  /* border longhand */
-  border-style: dashed;
-  border-width: 1px;
-  border-color: var(--secondary-color);
-  
-  background: #f9f9f9;
-}
-
-/* list items for meeting minutes */
-ul li {
-  margin-bottom: 8px;
-  padding-left: 15px;
-  border-left: 4px solid var(--accent-color);
-}
-
-/* ISSUE 3  */
-
-/* centering */
-section h2, 
-section h3, 
-section h4 {
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+h2 {
+  margin: 5px 0;
+  font-weight: 400;
+  color: #555;
 }
 
 /* flexbox */
 nav {
   display: flex;
-  justify-content: center; 
-  gap: 2.5rem;
+  justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
-  padding: 15px;
+  gap: 3rem;
+  background: var(--primary-color);
+  padding: 12px;
+  position: sticky;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+/* nesting & pseudo-classes */
+nav {
+  & a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.2s;
+    
+    &:hover {
+      color: var(--secondary-color);
+    }
+    
+    &:active {
+      transform: scale(0.9);
+    }
+  }
 }
 
-/* grid */
+/* layout + centering */
+
+.main-container {
+  max-width: 850px;
+  min-width: 350px; 
+  margin: 30px auto; 
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  position: relative;
+  
+  /* background */
+  background: rgba(255, 255, 255, 0.95); 
+  backdrop-filter: blur(5px);          
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+section {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* center section content blocks */
+section h2, section h3, section h4 {
+  text-align: center;
+}
+
+#meeting-time {
+  text-align: center;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/*kKeep lists left-aligned but centered as block */
+ul, ol {
+  display: table;
+  margin: 0 auto;
+  text-align: left;
+}
+
+li {
+  padding: 5px 0;
+}
+
+/* media evidence */
 .media-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 30px;
-  align-items: start;
-  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  padding: 20px 0;
 }
 
 .grid-item {
-  text-align: center; 
-  width: 100%;
+  text-align: center;
 }
 
 .audio-item {
-  grid-column: 1 / span 2; 
-  margin-top: 10px;
+  grid-column: 1 / span 2;
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
 }
 
-/* feedback form */
+/* form */
 form {
-  max-width: 550px;   
-  margin: 0 auto;       
-  text-align: left;      
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-/* positioning */
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+/* display none */
+.hidden-note {
+  display: none;
+}
+
+/* display inline-block */
+.inline-block-btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+
+/* adjacent sibling combinator */
+h3 + p {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* gneral sibling combinator */
+h2 ~ p {
+  line-height: 1.5;
+}
+
+/* child combinator */
+.media-grid > div {
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* new selector: :has() */
+section:has(h2[data-type="primary"]) {
+  border-left: 5px solid var(--primary-color);
+  padding-left: 15px;
+}
+
+/* sticky header */
 .sticky-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--main-bg);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* responsive */
+@media (max-width: 650px) {
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+  .audio-item {
+    grid-column: 1;
+  }
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* color */
 .main-container {
-  position: relative;
+  border-color: color(display-p3 0.09 0.17 0.29); 
 }
 
-/* display */
-.hidden-note {
-  display: none;      
+/* CSS Variable */
+body {
+  background-color: var(--main-bg, #f8f9fa);
 }
 
-.inline-block-btn {
-  display: inline-block;
-  margin: 20px auto 0 auto; 
-  padding: 10px 20px;
+/* combined selector */
+p.hidden-note {
+  font-style: italic;
+  color: #999;
+}
+
+/* box model */
+footer {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: var(--secondary-color);
 }
