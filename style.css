@@ -1,3 +1,5 @@
+/* ISSUE 1 */
+
 /* 3rd party font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
@@ -62,4 +64,131 @@ footer {
   font-size: 0.9rem;
   text-align: center;
   padding-top: 1rem;
+}
+
+
+/* ISSUE 2 */
+
+.main-container {
+  max-width: 800px;
+  min-width: 320px;
+  /* margin: <top> <right> <bottom> <left> */
+  margin: 20px auto; 
+  
+  /* border: width style color */
+  border: var(--border-thickness) solid var(--primary-color);
+  border-radius: 12px; /* Required: border-radius */
+  
+  /* padding: <top> <right> <bottom> <left> */
+  padding: 20px 40px 20px 40px; 
+  
+  background-color: white;
+}
+
+/* longhand syntax */
+section {
+  /* margin longhand */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 0;
+  margin-right: 0;
+
+  /* padding longhand */
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  /* border longhand */
+  border-style: dashed;
+  border-width: 1px;
+  border-color: var(--secondary-color);
+  
+  background: #f9f9f9;
+}
+
+/* list items for meeting minutes */
+ul li {
+  margin-bottom: 8px;
+  padding-left: 15px;
+  border-left: 4px solid var(--accent-color);
+}
+
+/* ISSUE 3  */
+
+/* centering */
+section h2, 
+section h3, 
+section h4 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* flexbox */
+nav {
+  display: flex;
+  justify-content: center; 
+  gap: 2.5rem;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* grid */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 30px;
+  align-items: start;
+  padding: 20px;
+}
+
+.grid-item {
+  text-align: center; 
+  width: 100%;
+}
+
+.audio-item {
+  grid-column: 1 / span 2; 
+  margin-top: 10px;
+}
+
+/* feedback form */
+form {
+  max-width: 550px;   
+  margin: 0 auto;       
+  text-align: left;      
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* positioning */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--main-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-container {
+  position: relative;
+}
+
+/* display */
+.hidden-note {
+  display: none;      
+}
+
+.inline-block-btn {
+  display: inline-block;
+  margin: 20px auto 0 auto; 
+  padding: 10px 20px;
 }
