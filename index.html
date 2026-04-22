@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Meeting Minutes</title>
+    <title>Dunder Mifflin - Meeting Minutes</title>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
@@ -11,6 +11,7 @@
         border-top: 1px solid var(--secondary-color);
         display: inline-block;
         padding: 10px;
+        font-size: 0.8rem;
       }
     </style>
   </head>
@@ -18,31 +19,65 @@
   <body>
 
     <header class="sticky-header">
-      <h1>Pomodoro Timer First Brainstorm</h1>
-      <h2>Check-Ins</h2>
-      <h3 style="font-style: italic; color: gray;">Date: April 13th, 2026</h3>
+      <h1>Dunder Mifflin Scranton Branch</h1>
+      <h2>Emergency Brainstorm: The Dundies</h2>
+      <h3 style="font-style: italic; color: #666; font-weight: 400;">Date: April 21st, 2026</h3>
     </header>
 
     <nav>
-      <a href="#attendance">Attendance</a>
-      <a href="#recordings">Media</a>
-      <a href="#feedback">Feedback</a>
+      <a href="#attendance">Staff</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#recordings">Evidence</a>
+      <a href="#feedback">HR Survey</a>
     </nav>
 
     <div class="main-container">
       <main>
 
+        <section id="meeting-time">
+          <p><strong>Start Time:</strong> 9:00 AM (Michael was late)</p>
+          <p><strong>End Time:</strong> 4:45 PM (Jim left early)</p>
+        </section>
+
         <section id="attendance">
-          <h2 data-type="primary">Attendance</h2>
+          <h2 data-type="primary">Staff Present</h2>
           <ul>
-            <li>Hemendra Ande</li>
+            <li>Michael Scott</li>
             <li>Dwight Schrute</li>
             <li>Jim Halpert</li>
-            <li>Michael Scott</li>
-            <li>Pamela Beesly</li>
+            <li>Pam Beesly</li>
+            <li>Stanley Hudson</li>
             <li>Angela Martin</li>
-            <li>Phyllis Vance</li>
-            <li>Kelly Kapoor</li>
+            <li>Kevin Malone</li>
+            <li>Toby Flenderson (Unfortunately)</li>
+          </ul>
+        </section>
+
+        <section id="agenda">
+          <h2>Meeting Agenda</h2>
+          <ol>
+            <li>Michael's 45-minute stand-up comedy warm-up.</li>
+            <li>Discussion on the "Bushiest Beaver" award typo.</li>
+            <li>Planning the "Movie Monday" screening of <em>Threat Level Midnight</em>.</li>
+          </ol>
+        </section>
+
+        <section id="unfinished-business">
+          <h2>Unfinished Business</h2>
+          <p>The following items remain unresolved from the previous meeting in the breakroom:</p>
+          <ul>
+            <li>Who put Dwight's stapler in Jell-O?</li>
+            <li>Toby's request for more ergonomic chairs (Denied)</li>
+          </ul>
+        </section>
+
+        <section id="future-business">
+          <h2>Upcoming Business</h2>
+          <h3>Sprint 2: The Beach Games</h3>
+          <p>Scheduled for the next corporate outing to determine Michael's successor:</p>
+          <ul>
+            <li>Hot coal walking competition.</li>
+            <li>Sumo wrestling in inflatable suits.</li>
           </ul>
         </section>
 
@@ -51,19 +86,19 @@
           <div class="media-grid"> 
             
             <div class="grid-item"> 
-              <h4>Diagram</h4>
-              <img src="diagram.jpg" alt="Whiteboard diagram" style="width:100%">
+              <h4>Branch Diagram</h4>
+              <img src="diagram.jpg" alt="Whiteboard diagram of the office" style="width:100%">
             </div>
 
             <div class="grid-item"> 
-              <h4>Video Recording</h4>
+              <h4>Security Footage</h4>
               <video controls style="width:100%">
                 <source src="video.mp4" type="video/mp4">
               </video>
             </div>
 
             <div class="grid-item audio-item"> 
-              <h4>Audio Recording</h4>
+              <h4>Conference Room Recording</h4>
               <audio controls>
                 <source src="audio.m4a" type="audio/mp4">
               </audio>
@@ -73,50 +108,50 @@
         </section>
 
         <section id="feedback">
-          <h3>Feedback Form</h3>
+          <h3>HR Anonymous Feedback</h3>
           <form>
             <fieldset>
-              <legend>Meeting Feedback</legend>
+              <legend>HR Submission Form (Straight to Toby's Trash)</legend>
 
               <label for="name">Name:</label><br>
-              <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+              <input type="text" id="name" name="name" placeholder="Enter name (or 'Anonymous')"><br><br>
 
-              <label for="date">Meeting Date:</label><br>
+              <label for="date">Date of Incident:</label><br>
               <input type="date" id="date" name="date"><br><br>
 
-              <label>Was the meeting helpful?</label><br>
+              <label>Was Michael's joke appropriate?</label><br>
               <input type="radio" name="helpful" id="yes" value="yes"> <label for="yes">Yes</label>
-              <input type="radio" name="helpful" id="no" value="no"> <label for="no">No</label><br><br>
+              <input type="radio" name="helpful" id="no" value="no"> <label for="no">No (Standard)</label><br><br>
 
-              <label>Topics you found useful:</label><br>
-              <input type="checkbox" id="idea"> <label for="idea">Project Idea</label><br>
-              <input type="checkbox" id="features"> <label for="features">Features</label><br>
-              <input type="checkbox" id="roles"> <label for="roles">Role Assignment</label><br><br>
+              <label>Which department are you in?</label><br>
+              <input type="checkbox" id="sales"> <label for="sales">Sales</label><br>
+              <input type="checkbox" id="accounting"> <label for="accounting">Accounting</label><br>
+              <input type="checkbox" id="hr"> <label for="hr">HR (Toby)</label><br><br>
 
-              <label for="role">Your role:</label><br>
+              <label for="role">Preferred Promotion:</label><br>
               <select id="role" name="role">
-                <option>Developer</option>
-                <option>Designer</option>
-                <option>Tester</option>
-                <option>Project Manager</option>
+                <option>Assistant Regional Manager</option>
+                <option>Assistant to the Regional Manager</option>
+                <option>Receptionist</option>
+                <option>Quabity Assuance</option>
               </select><br><br>
 
-              <label for="comments">Additional Comments:</label><br>
-              <textarea id="comments" name="comments" rows="4" cols="30" placeholder="Write your thoughts..."></textarea><br><br>
+              <label for="comments">Complaints about Dwight:</label><br>
+              <textarea id="comments" name="comments" rows="4" cols="30" placeholder="He set the office on fire again..."></textarea><br><br>
 
-              <button type="submit" class="inline-block-btn">Submit Feedback</button>
+              <button type="submit" class="inline-block-btn">Submit to HR</button>
             </fieldset>
           </form>
         </section>
 
-        <p class="hidden-note">This note is for TAs only and is hidden via CSS.</p>
+        <p class="hidden-note">This note is for Creed Bratton's eyes only.</p>
 
       </main>
     </div> 
 
     <footer>
-      <p>&copy; 2026 Pomodoro Project Team</p>
+      <p>&copy; 2026 Dunder Mifflin Paper Company, Inc. Scranton Branch.</p>
     </footer>
 
   </body>
-</html> ```
+</html>
