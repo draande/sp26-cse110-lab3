@@ -71,7 +71,7 @@ footer {
 
 .main-container {
   max-width: 800px;
-  
+  min-width: 320px;
   /* margin: <top> <right> <bottom> <left> */
   margin: 20px auto; 
   

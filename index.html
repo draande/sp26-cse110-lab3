@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+      footer p {
+        border-top: 1px solid var(--secondary-color);
+        display: inline-block;
+        padding: 10px;
+      }
+    </style>
   </head>
 
   <body>
@@ -12,7 +20,7 @@
     <header class="sticky-header">
       <h1>Pomodoro Timer First Brainstorm</h1>
       <h2>Check-Ins</h2>
-      <h3>Date: April 13th, 2026</h3>
+      <h3 style="font-style: italic; color: gray;">Date: April 13th, 2026</h3>
     </header>
 
     <nav>
@@ -25,7 +33,7 @@
       <main>
 
         <section id="attendance">
-          <h2>Attendance</h2>
+          <h2 data-type="primary">Attendance</h2>
           <ul>
             <li>Hemendra Ande</li>
             <li>Dwight Schrute</li>
@@ -54,7 +62,8 @@
               </video>
             </div>
 
-            <div class="grid-item audio-item"> <h4>Audio Recording</h4>
+            <div class="grid-item audio-item"> 
+              <h4>Audio Recording</h4>
               <audio controls>
                 <source src="audio.m4a" type="audio/mp4">
               </audio>
@@ -103,9 +112,11 @@
         <p class="hidden-note">This note is for TAs only and is hidden via CSS.</p>
 
       </main>
-    </div> <footer>
+    </div> 
+
+    <footer>
       <p>&copy; 2026 Pomodoro Project Team</p>
     </footer>
 
   </body>
-</html>
+</html> ```
